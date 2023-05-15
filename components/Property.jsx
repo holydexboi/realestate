@@ -25,7 +25,7 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
                     </Box>
                 </Flex>
                 <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
-                    {rooms} <FaBed/> | {baths} <FaBath/> | {millify(area)} sqft <BsGridFill /> | {new Date(createdAt)} <FcCalendar/>
+                    {rooms} <FaBed/> | {baths} <FaBath/> | {millify(area)} sqft <BsGridFill /> | {new Date(createdAt).getFullYear()} <FcCalendar/>
                 </Flex>
                 <Text fontSize="lg">
                     {title.length > 30 ? `${title.substring(0, 30)}...` : title}
