@@ -4,10 +4,11 @@ import { Box, Flex, Text, Avatar } from '@chakra-ui/react'
 import { FaBed, FaBath } from 'react-icons/fa'
 import { BsGridFill } from 'react-icons/bs'
 import { GoVerified } from 'react-icons/go'
+import { FcCalendar } from 'react-icons/fc'
 import millify from 'millify'
 import DefaultImage from '../assets/house.jpg'
 
-const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID}}) => (
+const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, createdAt, externalID}}) => (
     <Link href={`/property/${externalID}`} passHref>
         <Flex flexWrap="wrap" w="420px" p="5" paddingTop="0" justifyContent="flex-start" cursor="pointer">
             <Box>
@@ -24,7 +25,7 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
                     </Box>
                 </Flex>
                 <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
-                    {rooms} <FaBed/> | {baths} <FaBath/> | {millify(area)} sqft <BsGridFill />
+                    {rooms} <FaBed/> | {baths} <FaBath/> | {millify(area)} sqft <BsGridFill /> | {new Date(createdAt)} <FcCalendar/>
                 </Flex>
                 <Text fontSize="lg">
                     {title.length > 30 ? `${title.substring(0, 30)}...` : title}
